@@ -6,7 +6,7 @@ UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S),Linux)
 # ----- Linux server configuration -----
   CXX       := g++
-  CXXFLAGS  := -std=c++17
+  CXXFLAGS  := -std=c++20
   LDFLAGS   := -lsfml-network
   TARGET_SERVER := server
 else
@@ -16,7 +16,7 @@ else
   SFML_LIB     := $(SFML_PATH)/lib
 
   CXX       := g++
-  CXXFLAGS  := -std=c++17 -I"$(SFML_INCLUDE)"
+  CXXFLAGS  := -std=c++20 -I"$(SFML_INCLUDE)"
   LDFLAGS   := -L"$(SFML_LIB)" -lsfml-graphics -lsfml-window -lsfml-system -lsfml-network
 
   TARGET_CLIENT := client.exe
